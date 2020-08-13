@@ -12,21 +12,34 @@ public class Login {
         System.out.printf("---------------------------------------------------------------------");
         System.out.printf("\n");
         System.out.printf("\n");
-        System.out.printf("            Digite seu e-mail: ");
-        String email = scanner.nextLine();
+        System.out.printf("            Digite seu nome completo: ");
+        String nome = scanner.nextLine();
+
+        String[] array = nome.split(" ");
+        String letra = String.valueOf(array[0].charAt(0));
+        String sobrenome = array[array.length -1];
+        String log = letra+"_"+sobrenome;
+
         System.out.printf("\n");
         System.out.printf("            Digite uma senha: ");
         String senha = scanner.nextLine();
         System.out.printf("\n");
+
+
         if (senha.length() >= 8) {
-            System.out.printf("            Login criado com sucesso");
+            System.out.printf("                    Login criado com sucesso");
+
+
         }
         else {
             System.out.printf("         Digite uma senha de no mínimo 8 caracteres: ");
             String senha1 = scanner.nextLine();
-            System.out.printf("Senha criada com sucesso ");
+            System.out.printf("                    Login criado com sucesso");
+
 
         }
+
+
         System.out.printf("\n");
         System.out.printf("\n");
         System.out.printf("---------------------------------------------------------------------");
@@ -36,22 +49,20 @@ public class Login {
         System.out.printf("---------------------------------------------------------------------");
         System.out.printf("\n");
         System.out.printf("\n");
-        System.out.printf("            Digite seu e-mail: ");
-        String email1 = scanner.nextLine();
-        if (email.equals(email1)) {
+        System.out.printf("            Digite seu Login: ");
+        String log1 = scanner.nextLine();
+        if (log.equals(log1)) {
             System.out.printf("\n");
             System.out.printf("            Digite sua senha: ");
             String senha1 = scanner.nextLine();
             System.out.printf("\n");
-            if ( senha.equals(senha1)) {
-                System.out.printf("            Login realizado com sucesso");
+            if (senha.equals(senha1)) {
+                System.out.printf("                 Login realizado com sucesso");
+            } else {
+                System.out.printf("            senha inválida");
             }
-                else {
-                    System.out.printf("            senha inválida");
-                }
-            }
-        else {
-            System.out.printf("            Email inválido");
+        } else {
+            System.out.printf("                 Login inválido");
         }
 
     }
