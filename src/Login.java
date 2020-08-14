@@ -29,43 +29,63 @@ public class Login {
         boolean temMaiuscula = false;
         boolean temMinuscula = false;
         boolean temNumero = false;
-        while(cont < (senha.length()) ) {
+
+        while(cont < (senha.length() ) ) {
             String caracter = String.valueOf(senha.charAt(cont));
-            if (caracter.equals("@-!-#")) {
-                temCaracter = caracter.equals("@-!-#");
-                if (temCaracter == true) {
+            if (caracter.equals("@") || caracter.equals("!") || caracter.equals("#") ) {
+                temCaracter = true;
                     break;
                 }
-            }
-            String letraMaiuscula = String.valueOf(senha.charAt(cont));
-                if (letraMaiuscula.equals("A-Z")) {
-                    temMaiuscula = letraMaiuscula.equals("A-Z");
-                    if (temCaracter == true) {
-                        break;
-                    }
-                }
 
+            cont++;
+        }
+        while(cont < (senha.length()) ) {
+            String letraMaiuscula = String.valueOf(senha.charAt(cont));
+                if (letraMaiuscula.equals("A") || letraMaiuscula.equals("B") || letraMaiuscula.equals("C") || letraMaiuscula.equals("D")
+                        || letraMaiuscula.equals("E") || letraMaiuscula.equals("F") || letraMaiuscula.equals("G") || letraMaiuscula.equals("H")
+                        || letraMaiuscula.equals("I") || letraMaiuscula.equals("J") || letraMaiuscula.equals("K") || letraMaiuscula.equals("L")
+                        || letraMaiuscula.equals("M") || letraMaiuscula.equals("N") || letraMaiuscula.equals("O") || letraMaiuscula.equals("P")
+                        || letraMaiuscula.equals("Q") || letraMaiuscula.equals("R") || letraMaiuscula.equals("S") || letraMaiuscula.equals("T")
+                        || letraMaiuscula.equals("U") || letraMaiuscula.equals("V") || letraMaiuscula.equals("W") || letraMaiuscula.equals("X")
+                        || letraMaiuscula.equals("Y") || letraMaiuscula.equals("Z")) {
+                    temMaiuscula = true;
+
+                        break;
+                    }
+
+            cont++;
+        }
+        while(cont < (senha.length()) ) {
             String letraMinuscula = String.valueOf(senha.charAt(cont));
-                if (letraMinuscula.equals("a-z")) {
-                    temMinuscula = letraMinuscula.equals("a-z");
-                    if (temMinuscula == true) {
+                if (letraMinuscula.equals("a") || letraMinuscula.equals("b") || letraMinuscula.equals("c") || letraMinuscula.equals("d")
+                    || letraMinuscula.equals("e") || letraMinuscula.equals("f") || letraMinuscula.equals("g") || letraMinuscula.equals("h")
+                    || letraMinuscula.equals("i") || letraMinuscula.equals("j") || letraMinuscula.equals("k") || letraMinuscula.equals("l")
+                    || letraMinuscula.equals("m") || letraMinuscula.equals("n") || letraMinuscula.equals("o") || letraMinuscula.equals("p")
+                    || letraMinuscula.equals("q") || letraMinuscula.equals("r") || letraMinuscula.equals("s") || letraMinuscula.equals("t")
+                    || letraMinuscula.equals("u") || letraMinuscula.equals("v") || letraMinuscula.equals("w") || letraMinuscula.equals("x")
+                    || letraMinuscula.equals("y") || letraMinuscula.equals("z")) {
+                    temMinuscula = true;
+
                         break;
                     }
-                }
+
+            cont++;
+        }
+        while(cont < (senha.length()) ) {
             String Numero = String.valueOf(senha.charAt(cont));
-                if (Numero.equals("0-9")) {
-                    temNumero = Numero.equals("0-9");
-                    if (temNumero == true) {
+                if (Numero.equals("0") || Numero.equals("1") || Numero.equals("2") || Numero.equals("3") || Numero.equals("4")
+                        || Numero.equals("5") || Numero.equals("6") || Numero.equals("7") || Numero.equals("8") || Numero.equals("9") ) {
+                    temNumero = true;
                         break;
                     }
-                }
+
                 cont++;
             }
 
                     System.out.printf("\n");
 
-                if(8 <= senha.length()) {
-                    if ((temCaracter = true) && (temMaiuscula = true) && (temMinuscula = true) && (temNumero = true)) {
+                if(senha.length() >=8 ) {
+                    if ((temCaracter == true) && (temMaiuscula == true) && (temMinuscula == true) && (temNumero == true)) {
                         System.out.printf("                    Login criado com sucesso");
                     }
                     else{
