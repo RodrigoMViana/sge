@@ -62,20 +62,48 @@ public class Login {
                     System.out.printf("---------------------------------------------------------------------");
                     System.out.printf("\n");
                     System.out.printf("\n");
+
+
+                    boolean login1 = false;
+                    while (login1==false)  {
                     System.out.printf("            Digite seu Login: ");
                     String log1 = scanner.nextLine();
                     if (log.equals(log1)) {
+                        login1 = true;
+
                         System.out.printf("\n");
+
+                        boolean senhaCerta = false;
+                        while (senhaCerta==false) {
+
+                        int cont = 0;
+                        while (cont<=2) {
                         System.out.printf("            Digite sua senha: ");
                         String senha1 = scanner.nextLine();
                         System.out.printf("\n");
                         if (senha.equals(senha1)) {
+
                             System.out.printf("                 Login realizado com sucesso");
+
                         } else {
-                            System.out.printf("            senha inválida");
+                            System.out.printf("                senha inválida");
+                            System.out.printf("\n");
+                            System.out.printf("\n");
                         }
-                    } else {
-                        System.out.printf("                 Login inválido");
+                        }
+                        }
+                    }
+                    else {
+                        System.out.printf("\n");
+                        System.out.printf("Login inválido - Seu Login é a primeira letra do seu nome mais _ mais seu ultimo sobrenome");
+                        System.out.printf("\n");
+                        System.out.printf("\n");
+                        System.out.println("             Exemplo: teobaldo souza");
+                        System.out.println("             login:   t_souza");
+                        System.out.printf("\n");
+                        System.out.printf("\n");
+                    }
+
                     }
 
 
